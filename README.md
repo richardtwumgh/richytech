@@ -1,0 +1,2 @@
+# richytech
+Simply Awesome
