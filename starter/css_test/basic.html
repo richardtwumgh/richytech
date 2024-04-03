@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/text.css">
+</head>
+<body>
+    
+<h1 id="joke">RICHY'S TECH JOKES</h1>
+    <script>
+        var joke = document.getElementById('joke');
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET','https://v2.jokeapi.dev/joke/Programming?type=single&amount=3');
+        xhr.onreadystatechange = function(){
+            if(this.readyState === 4 && this.status === 200){
+                var responseData = JSON.parse(xhr.responseText);
+                for(i =0; i < responseData.jokes.length; i++){
+                    const para = document.createElement("p");
+                    para.innerHTML = responseData.jokes[i].joke;
+                    document.body.appendChild(para);
+                
+                }
+                console.log();
+            }else{
+                    console.error(xhr.statusText);
+                }
+        };
+        xhr.send("hello");
+
+//         async function fetchJokes() {
+//   try {
+//     const response = await fetch('https://v2.jokeapi.dev/joke/Programming?type=single&amount=3');
+//     if (!response.ok) {
+//       throw new Error(`Error fetching data: ${response.status} ${response.statusText}`);
+//     }
+//     const data = await response.json();
+//     data.forEach((joke, index) => {
+//       console.log(`Joke ${index + 1}: ${joke.value}`);
+//     });
+//   } catch (error) {
+//     console.error('Error fetching data:', error.message);
+//   }
+// }
+
+
+    </script>
+
+</body>
+</html>

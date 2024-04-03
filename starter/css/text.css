@@ -1,0 +1,13 @@
+body{
+    background: rgb(0, 242, 255);
+    color: white;
+    font-family: roboto;
+}
+p{
+    background: teal;
+    width:50%;
+    color: white;
+    font-family: roboto;
+    border-radius: 50px;
+    padding: 30px;
+}
